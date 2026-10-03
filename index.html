@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stock Market Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>📈 Stock Market Dashboard</h1>
+        <p>Track stock prices, trends and market data</p>
+    </header>
+
+    <main>
+
+        <section class="controls">
+
+            <div>
+                <label for="stock">Select Stock</label>
+
+                <select id="stock">
+                    <option value="IBM">IBM</option>
+                    <option value="AAPL">AAPL</option>
+                    <option value="MSFT">MSFT</option>
+                    <option value="GOOGL">GOOGL</option>
+                    <option value="AMZN">AMZN</option>
+                    <option value="TSLA">TSLA</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="period">Select Period</label>
+
+                <select id="period">
+                    <option value="7">1 Week</option>
+                    <option value="30">1 Month</option>
+                    <option value="90">3 Months</option>
+                    <option value="180">6 Months</option>
+                    <option value="365">1 Year</option>
+                </select>
+            </div>
+
+            <button id="refresh">
+                🔄 Refresh Data
+            </button>
+
+        </section>
+
+
+        <section class="intro">
+
+            <h2>📊 Real-Time Stock Market Dashboard</h2>
+
+            <p>
+                Track stock prices, analyze trends and visualize market data.
+            </p>
+
+        </section>
+
+
+        <div id="status" class="status">
+            Loading...
+        </div>
+
+
+        <div id="date" class="date">
+            Latest available data
+        </div>
+
+
+        <h2 id="summaryTitle">
+            📊 IBM Market Summary
+        </h2>
+
+
+        <section class="cards">
+
+            <div class="card">
+                <div class="icon">💰</div>
+                <h3>Closing Price</h3>
+                <h2 id="close">$0.00</h2>
+                <p id="change">0.00%</p>
+            </div>
+
+            <div class="card">
+                <div class="icon">📊</div>
+                <h3>Opening Price</h3>
+                <h2 id="open">$0.00</h2>
+            </div>
+
+            <div class="card">
+                <div class="icon">🔼</div>
+                <h3>Day High</h3>
+                <h2 id="high">$0.00</h2>
+            </div>
+
+            <div class="card">
+                <div class="icon">🔽</div>
+                <h3>Day Low</h3>
+                <h2 id="low">$0.00</h2>
+            </div>
+
+        </section>
+
+
+        <div id="message" class="message">
+            Market information
+        </div>
+
+
+        <section class="chart-section">
+
+            <h2>📈 Stock Price & 20-Day Moving Average</h2>
+
+            <div class="chart">
+                <canvas id="priceChart"></canvas>
+            </div>
+
+        </section>
+
+
+        <section class="chart-section">
+
+            <h2>📊 Trading Volume</h2>
+
+            <div class="chart">
+                <canvas id="volumeChart"></canvas>
+            </div>
+
+        </section>
+
+
+        <section class="chart-section">
+
+            <h2>🔼 High & Low Price Range</h2>
+
+            <div class="chart">
+                <canvas id="rangeChart"></canvas>
+            </div>
+
+        </section>
+
+
+        <section class="table-section">
+
+            <h2>📋 Stock Data</h2>
+
+            <div class="table-box">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Date</th>
+                            <th>Open</th>
+                            <th>High</th>
+                            <th>Low</th>
+                            <th>Close</th>
+                            <th>Volume</th>
+                            <th>Moving Average</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="tableBody"></tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <section class="download">
+
+            <h2>⬇️ Download Stock Data</h2>
+
+            <button id="download">
+                📥 Download CSV
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            📈 Stock Market Dashboard
+        </p>
+
+        <p>
+            HTML + CSS + JavaScript
+        </p>
+
+    </footer>
+
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Our JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
